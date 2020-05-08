@@ -22,7 +22,7 @@ func sayhelloName(w http.ResponseWriter, r *http.Request) {
         fmt.Println("key:", k)
         fmt.Println("val:", strings.Join(v, ""))
     }
-    fmt.Fprintf(w, "BAZINGAAAA") // send data to client side
+    fmt.Fprintf(w, "Iam Using Aws Pipeline for second time") // send data to client side
 }
 
 func main() {
