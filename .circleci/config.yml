@@ -24,3 +24,7 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d ./...
       - run: go test -v ./...
+      - run: docker build -t demogo -f Dockerfile . 
+      - run: docker tag demogo adityasharma369/demogo
+      - run: docker login --username=adityasharma369 --password=Adi@.3690
+      - run: docker push adityasharma369/demogo
