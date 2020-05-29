@@ -22,6 +22,11 @@ jobs:
           root: .
           paths:
             - ./image.tar
+      - run:
+        name: Publish Docker Image to Docker Hub
+        command: |
+          docker login --username=adityasharma369 --password=Adi@.3690
+          docker push demogo:latest           
   publish-latest:
     executor: docker-publisher
     steps:
