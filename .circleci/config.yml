@@ -25,15 +25,15 @@ jobs:
           root: .
           paths:
             - ./image.tar
-  publish-latest:
-    executor: docker-publisher
-    steps:
-      - attach_workspace:
-          at: /tmp/workspace
-      - setup_remote_docker
-      - run:
-          name: Load archived Docker image
-          command: docker load -i /tmp/workspace/image.tar
+  # publish-latest:
+  #   executor: docker-publisher
+  #   steps:
+  #     - attach_workspace:
+  #         at: /tmp/workspace
+  #     - setup_remote_docker
+  #     - run:
+  #         name: Load archived Docker image
+  #         command: docker load -i /tmp/workspace/image.tar
       # - run:
       #     name: Publish Docker Image to Docker Hub
       #     command: |
@@ -49,9 +49,9 @@ workflows:
           filters:
             branches:
               only: master
-      - publish-latest:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
+      # - publish-latest:
+      #     requires:
+      #       - build
+      #     filters:
+      #       branches:
+      #         only: master
