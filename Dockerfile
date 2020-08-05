@@ -1,6 +1,5 @@
 FROM golang:1.10.0
 
-ARG version_default="$version"
 
 WORKDIR /go/src/app
 
